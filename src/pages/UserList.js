@@ -186,6 +186,9 @@ const UserList = () => {
                                 <Form.Item name="email" label="Email" rules={[{ required: true }]}>
                                     <Input />
                                 </Form.Item>
+                                <Form.Item name="password" label="Password">
+                                    <Input />
+                                </Form.Item>
                                 <Form.Item name="role" label="Role" rules={[{ required: true }]}>
                                     <Select>
                                         <Option value="subadmin">Sub Admin</Option>
