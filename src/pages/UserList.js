@@ -113,6 +113,7 @@ const UserList = () => {
         { title: "First Name", dataIndex: "f_name" },
         { title: "Last Name", dataIndex: "l_name" },
         { title: "Email", dataIndex: "email" },
+        { title: "Password", dataIndex: "password" },
         { title: "Role", dataIndex: "role" },
         {
             title: "Status",
