@@ -94,6 +94,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../utils/axios";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -140,10 +141,11 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (user?.role === "subadmin") {
-      axios
-        .get(`http://localhost:4000/api/access/users/${user.id}`)
+      api.get(`/access/users/${user.id}`)
         .then((res) => {
-          const pages = res.data.filter((p) => p.type === "access").map((p) => p.page);
+          const pages = res.data
+            .filter((p) => p.type === "access")
+            .map((p) => p.page);
           setAllowedPages(pages);
         })
         .catch((err) => {
